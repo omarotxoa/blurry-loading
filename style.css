@@ -1,12 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh; /*so that we can use justify-content: center */
     overflow: hidden; /* so that there are no scrollboxes */
     margin: 0;
+}
+
+.bg {
+    background: url('https://images.unsplash.com/photo-1614186981972-8aff75a55306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+    position: absolute; /* so that z-index applies */
+
+    /* to have less of a blur-border, we go -pixels on the top/left properties and use calc() on the height/width properties */
+    top: -30px;
+    left: -30px;
+    height: calc(100vh + 60px);
+    width: calc(100vw + 60px);
+    z-index: -1; /* so it shows below the percentage load text */
+    filter: blur(0px);
+}
+
+.loading-text {
+    font-size: 50px;
+    color: black;
 }
